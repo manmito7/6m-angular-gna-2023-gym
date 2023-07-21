@@ -40,7 +40,7 @@ const routes: Routes = [
 
       {path:'dashboard',component:AdminDashboardComponent},
       {path:'manage-users',component:ManageUsersComponent},
-      {path:'manage',component:ManageComponent},
+      {path:'manage-package',component:ManageComponent},
       {path:'add',component:AddComponent},
       {path:'update',component:UpdateComponent}
 

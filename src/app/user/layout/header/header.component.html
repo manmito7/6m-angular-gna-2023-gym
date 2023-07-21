@@ -29,8 +29,8 @@
                         </li>
                         <li *ngIf="!login"><a routerLink="/user/register">Register</a></li>
                         <li><a routerLink="/user/contact">Contacts</a></li>
-                        <li *ngIf="!login" ><a routerLink="/login" class="btn btn-primary" >Login</a></li>
-                        <a routerLink="/login" *ngIf="login" class="btn btn-primary">Logout<i class="fa fa-arrow-right ms-3"></i></a>
+                        <li *ngIf="!login" ><a routerLink="/login" >Login</a></li>
+                        <a routerLink="/login" *ngIf="login">Logout<i class="fa fa-arrow-right ms-3"></i></a>
 
 
                     </ul>
