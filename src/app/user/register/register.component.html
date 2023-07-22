@@ -6,7 +6,7 @@
                     <h2>Register Form</h2>
                     <div class="breadcrumb-controls">
                         <a href="#"><i class="fa fa-home"></i> Home</a>
-                        <span>Schedule</span>
+                        <span>Register</span>
                     </div>
                 </div>
             </div>
@@ -14,58 +14,60 @@
     </div>
 </section>
 
-<div class="container"> 
-    <div class="row1">
-        <div class="col-md-5">  </div>
-            <div class="col-md-2 my-3">  <h4> Register Form </h4> </div>
-            <div class="col-md-4"> </div>
 
-    <form (ngSubmit)="submit()" #registerForm="ngForm"> 
-    <div class="row2">
+<section class="blog-section spad text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <form (ngSubmit)="submit()" #registerForm="ngForm">
+                    <div class="form-group">
+                        <label for="exampleInputName">Name</label>
+                        <input type="text" class="form-control" id="exampleInputName" [(ngModel)]="userData.name"
+                            required pattern="[A-Za-z]{3}" #txtname="ngModel">
+                        <span
+                            *ngIf="txtname.errors && txtname.invalid && txtname.touched && txtname.errors['required'] && txtname.errors['pattern']">Invalid
+                            Name</span>
+                    </div>
 
-        <div class="col-md-3"></div>
-            <div class="col-md-5 my-3">
-                <input type="text" class="form-control" id="name" placeholder="Enter your Name" [(ngModel)]="userData.name" required pattern="[A-Za-z]{3}" #txtname="ngModel">
-                <span *ngIf="txtname.errors && txtname.invalid && txtname.touched && txtname.errors['required'] && txtname.errors['pattern']">Invalid Name</span>
+                    <div class="form-group">
+                        <label for="exampleInputAge">Age</label>
+                        <input type="number" class="form-control" id="exampleInputAge" [(ngModel)]="userData.age"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputContact">Contact</label>
+                        <input type="number" class="form-control" id="exampleInputContact"
+                            [(ngModel)]="userData.contact" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            [(ngModel)]="userData.email" required>
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputPassword">Password</label>
+                        <input type="text" class="form-control" id="exampleInputPassword" [(ngModel)]="userData.name"
+                            required pattern="[A-Za-z]{3}" #txtname="ngModel">
+                    </div>
+
+                    <button type="submit" routerLink="/login" class="btn btn-danger">Register</button>
+
+                </form>
+
             </div>
-        <div class="col-md-3"></div>
-
-        <div class="col-md-3"></div>
-            <div class="col-md-5 my-3">
-                <input type="number" class="form-control" id="age" placeholder="Enter your Age" [(ngModel)]="userData.age" required>
-            </div>
-        <div class="col-md-3"></div>
-    
-        <div class="col-md-3"></div>
-            <div class="col-md-5 my-3">
-                <input type="number" class="form-control" id="contact" placeholder="Enter your Contact Number" [(ngModel)]="userData.contact" required>
-            </div>
-        <div class="col-md-3"></div>
-
-        <div class="col-md-3"></div>
-            <div class="col-md-5 my-3">
-                <input type="email" class="form-control" id="email" placeholder="Enter your email" [(ngModel)]="userData.email" required>
-            </div>
-        <div class="col-md-3"></div>
-    
-   
-            <div class="col-md-4"> </div>
-            <div class="col-md-5 my-3">
-                <input type="password" class="form-control" id="password" placeholder="Enter your password" [(ngModel)]="userData.password" required >
-
-            </div>
-            <div class="col-md-4"> </div>
-  
-
-
-        <div class="col-md-3"> </div>
-            <div class="col-md-4">
-                <button type="submit" routerLink="/login"  class="btn btn-primary">Register</button>
-            </div>
-            <div class="col-md-3"> </div>
-
+            <div class="col-3"> </div>
+        </div>
     </div>
-            
-    </form>
-</div>
-</div>
+</section>
+
+
+
+
+
+

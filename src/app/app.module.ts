@@ -22,9 +22,12 @@ import { AdminFooterComponent } from './admin/admin-layout/admin-footer/admin-fo
 import { AdminLayoutComponent } from './admin/admin-layout/admin-layout.component';
 import { RegisterComponent } from './user/register/register.component';
 import { ProfileComponent } from './user/profile/profile.component';
-import { ManageComponent } from './admin/manage/manage.component';
-import { AddComponent } from './admin/add/add.component';
-import { UpdateComponent } from './admin/update/update.component';
+import { ManageTrainerComponent } from './admin/trainer/manage-trainer/manage-trainer.component';
+import { AddTrainerComponent } from './admin/trainer/add-trainer/add-trainer.component';
+import { UpdateTrainerComponent } from './admin/trainer/update-trainer/update-trainer.component';
+import { ManagePackageComponent } from './admin/package/manage-package/manage-package.component';
+import { AddPackageComponent } from './admin/package/add-package/add-package.component';
+import { UpdatePackageComponent } from './admin/package/update-package/update-package.component';
 
 @NgModule({
   declarations: [
@@ -48,9 +51,12 @@ import { UpdateComponent } from './admin/update/update.component';
     AdminLayoutComponent,
     RegisterComponent,
     ProfileComponent,
-    ManageComponent,
-    AddComponent,
-    UpdateComponent,
+    ManageTrainerComponent,
+    AddTrainerComponent,
+    UpdateTrainerComponent,
+    ManagePackageComponent,
+    AddPackageComponent,
+    UpdatePackageComponent,
 
   ],
   imports: [

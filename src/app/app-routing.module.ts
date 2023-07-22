@@ -16,9 +16,12 @@ import { RegisterComponent } from './user/register/register.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { userGuard } from './user/guard/user.guard';
 import { adminGuard } from './admin/guard/admin.guard';
-import { ManageComponent } from './admin/manage/manage.component';
-import { AddComponent } from './admin/add/add.component';
-import { UpdateComponent } from './admin/update/update.component';
+import { ManageTrainerComponent } from './admin/trainer/manage-trainer/manage-trainer.component';
+import { AddTrainerComponent } from './admin/trainer/add-trainer/add-trainer.component';
+import { UpdateTrainerComponent } from './admin/trainer/update-trainer/update-trainer.component';
+import { ManagePackageComponent } from './admin/package/manage-package/manage-package.component';
+import { AddPackageComponent } from './admin/package/add-package/add-package.component';
+import { UpdatePackageComponent } from './admin/package/update-package/update-package.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'/user/home', pathMatch:'full'},
@@ -40,9 +43,12 @@ const routes: Routes = [
 
       {path:'dashboard',component:AdminDashboardComponent},
       {path:'manage-users',component:ManageUsersComponent},
-      {path:'manage-package',component:ManageComponent},
-      {path:'add',component:AddComponent},
-      {path:'update',component:UpdateComponent}
+      {path:'manage-package',component:ManagePackageComponent},
+      {path:'add-package',component:AddPackageComponent},
+      {path:'update-package',component:UpdatePackageComponent},
+      {path:'manage-trainer',component:ManageTrainerComponent},
+      {path:'add-trainer',component:AddTrainerComponent},
+      {path:'update-trainer',component:UpdateTrainerComponent}
 
 ] },
 ]

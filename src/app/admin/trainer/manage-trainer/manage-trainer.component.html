@@ -4,10 +4,10 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb-text">
-                    <!-- <h2>Welcome To Dashboard </h2> -->
+                    <h2></h2>
                     <div class="breadcrumb-controls">
                         <a href="#"><i class="fa fa-home"></i> Home</a>
-                        <span>users</span>
+                        <span>Trainer</span>
                     </div>
                 </div>
             </div>
@@ -16,18 +16,24 @@
 </section>
 
 
+
+
 <section class="blog-section spad text-white">
     <div class="container">
+        <button routerLink="/admin/add-trainer" class="p-3 me-4 btn-danger">Add</button>
+
         <div class="row">
             <div class="col-12">
-                <table class="table table-borderless  table-hover my-3 table-light">
+                <table class="table table-borderless  table-hover my-3 table-warning">
                     <thead>
                         <tr>
-                            <th> Name</th>
+                            <th>Name</th>
                             <th>Email Id</th>
                             <th>Contact</th>
-                            <th>Height</th>
-                            <th>Weight</th>
+                            <th>Speacialisations</th>
+                            <th>Certificates</th>
+                            <th>Experience</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
 
@@ -38,6 +44,11 @@
                             <td>9838478574</td>
                             <td>4.5 Feet</td>
                             <td>52 kg</td>
+                            <td></td>
+                            <td>
+                                <button class="btn btn-success m-1 p-2"><i class="bi bi-pencil-square"></i></button>
+                                <button class="btn btn-danger m-1"><i class="bi bi-trash-fill"></i></button>
+                            </td>
                         </tr>
 
                         <tr>
@@ -46,6 +57,11 @@
                             <td>9838478574</td>
                             <td>4.5 Feet</td>
                             <td>52 kg</td>
+                            <td></td>
+                            <td>
+                                <button class="btn btn-success m-1 p-2"><i class="bi bi-pencil-square"></i></button>
+                                <button class="btn btn-danger m-1"><i class="bi bi-trash-fill"></i></button>
+                            </td>
                         </tr>
 
                         <tr>
@@ -54,6 +70,11 @@
                             <td>9838478574</td>
                             <td>4.5 Feet</td>
                             <td>52 kg</td>
+                            <td></td>
+                            <td>
+                                <button class="btn btn-success m-1 p-2" routerLink="/admin/update-trainer"><i class="bi bi-pencil-square"></i></button>
+                                <button class="btn btn-danger m-1"><i class="bi bi-trash-fill"></i></button>
+                            </td>                        
                         </tr>
 
                         <tr>
@@ -62,6 +83,11 @@
                             <td>9838478574</td>
                             <td>4.5 Feet</td>
                             <td>52 kg</td>
+                            <td></td>
+                            <td>
+                                <button class="btn btn-success m-1 p-2"><i class="bi bi-pencil-square"></i></button>
+                                <button class="btn btn-danger m-1"><i class="bi bi-trash-fill"></i></button>
+                            </td>
                         </tr>
                     </tbody>
 
