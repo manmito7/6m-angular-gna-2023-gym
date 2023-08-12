@@ -1869,6 +1869,76 @@ ol {
 }
 
 /*---------------------
+  Packages Section
+-----------------------*/
+
+.packages-section{
+	background-color: #151515;
+	padding-top: 90px;
+	padding-bottom: 70px;
+	color: white;
+
+}
+
+.container .col-lg-4{
+	margin-top: 50px;
+}
+
+.packages-section .row1{
+	background-color: orangered;
+	padding:30px;
+}
+
+
+.packages-section,h2,h3,p{
+	color:white;
+
+}
+
+.packages-section,h2,h3{
+	font-weight: 400;
+
+}
+
+.card-title{
+	text-align: center;
+}
+
+.card{
+	background-color: grey ;
+	height:450px;
+	width: 300px;
+	border: 2px solid red;
+}
+
+.image img{
+	height:200px;
+	width:300px;
+}
+
+.card-title{
+	font-weight:bolder;
+	text-align: center;
+	padding: 5px;
+}
+
+.card-text{
+	color:#000000;
+	text-align: center;
+	font-size: large;
+}
+
+.btn1{
+	margin-left: 70px;
+	border-radius: 10px;
+	padding: 10px;
+	margin-top: 5 0px;
+}
+
+
+
+
+/*---------------------
   Trainer Section
 -----------------------*/
 

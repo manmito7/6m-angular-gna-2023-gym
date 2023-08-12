@@ -1,3 +1,5 @@
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+
 <section class="breadcrumb-section set-bg spad" style="background-image: url(assets/img/about-bread.jpg)">
 
     <div class="container">
@@ -22,11 +24,11 @@
         <div class="row">
             <div class="col-3"></div>
             <div class="col-6">
-                <form> 
-                    <input type="text" class="form-control m-3" placeholder="Package Name">
-                    <input type="numbers" class="form-control m-3" placeholder="duration">
-                    <input type="text" class="form-control m-3" placeholder="Time Period">
-                    <input type="numbers" class="form-control m-3" placeholder="Price">
+                <form (ngSubmit)="submit()"> 
+                    <input type="text" class="form-control m-3" id="name" name="name" [(ngModel)]="package.Package_name" placeholder="Package_name">
+                    <input type="number" class="form-control m-3" id="duration" name="duration" [(ngModel)]="package.duration" placeholder="duration">
+                    <input type="text" class="form-control m-3"id="time_period" name="time_period" [(ngModel)]="package.time_period" placeholder="Time Period">
+                    <input type="number" class="form-control m-3" id="price" name="price" [(ngModel)]="package.price" placeholder="Price">
                     <!-- <select name="Certifications" class="form-control m-3">
                         <option value="1">Diploma</option>
                         <option value="2"></option>
@@ -35,8 +37,8 @@
                         <option selected disabled>Select one</option>
 
                     </select> -->
-
-                    <button routerLink="/admin/manage-trainer" type="submit" class="btn btn-danger m-3">Add</button>
+                       
+                    <button type="submit" class="btn btn-danger m-3">Add</button>
                     <div class="col-3"></div>
                 </form>
             </div>

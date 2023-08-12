@@ -4,24 +4,23 @@ import { LayoutComponent } from './user/layout/layout.component';
 import { HomeComponent } from './user/home/home.component';
 import { AboutUsComponent } from './user/about-us/about-us.component';
 import { GalleryComponent } from './user/gallery/gallery.component';
-import { BlogComponent } from './user/blog/blog.component';
 import { ContactComponent } from './user/contact/contact.component';
-import { ScheduleComponent } from './user/schedule/schedule.component';
-import { BlogSingleComponent } from './user/blog-single/blog-single.component';
 import { LoginComponent } from './login/login.component';
 import { AdminLayoutComponent } from './admin/admin-layout/admin-layout.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { ManageUsersComponent } from './admin/manage-users/manage-users.component';
 import { RegisterComponent } from './user/register/register.component';
 import { ProfileComponent } from './user/profile/profile.component';
-import { userGuard } from './user/guard/user.guard';
-import { adminGuard } from './admin/guard/admin.guard';
 import { ManageTrainerComponent } from './admin/trainer/manage-trainer/manage-trainer.component';
 import { AddTrainerComponent } from './admin/trainer/add-trainer/add-trainer.component';
 import { UpdateTrainerComponent } from './admin/trainer/update-trainer/update-trainer.component';
 import { ManagePackageComponent } from './admin/package/manage-package/manage-package.component';
 import { AddPackageComponent } from './admin/package/add-package/add-package.component';
 import { UpdatePackageComponent } from './admin/package/update-package/update-package.component';
+import { PackagesComponent } from './user/packages/packages.component';
+import { TrainerComponent } from './user/trainer/trainer.component';
+import { environment } from 'src/environments/environment';
+import { AddPackage } from './models/add-package/add-package.model';
 
 const routes: Routes = [
   {path:'', redirectTo:'/user/home', pathMatch:'full'},
@@ -30,16 +29,15 @@ const routes: Routes = [
   {path:'user', component:LayoutComponent,children:[
       {path:'home', component:HomeComponent},
       {path:'about-us', component:AboutUsComponent},
+      {path:'packages', component:PackagesComponent},
+      {path:'trainer',component:TrainerComponent},
       {path:'gallery', component:GalleryComponent},
-      {path:'blog', component:BlogComponent},
-      {path:'blog-single', component:BlogSingleComponent},
       {path:'contact', component:ContactComponent},
-      {path:'schedule', component:ScheduleComponent},
       {path:'register',component:RegisterComponent},
-      {path:'profile',component:ProfileComponent, canActivate:[userGuard]}
+      {path:'profile',component:ProfileComponent}
     ] },
 
-  {path: 'admin',component:AdminLayoutComponent, canActivate:[adminGuard], children:[
+  {path: 'admin',component:AdminLayoutComponent, children:[
 
       {path:'dashboard',component:AdminDashboardComponent},
       {path:'manage-users',component:ManageUsersComponent},

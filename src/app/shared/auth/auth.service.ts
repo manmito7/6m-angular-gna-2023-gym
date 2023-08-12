@@ -19,7 +19,7 @@ export class AuthService {
 
 
   remove(){
-
+    sessionStorage.clear()
   }
 
 

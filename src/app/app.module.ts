@@ -10,10 +10,7 @@ import { AboutUsComponent } from './user/about-us/about-us.component';
 import { HomeComponent } from './user/home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ContactComponent } from './user/contact/contact.component';
-import { ScheduleComponent } from './user/schedule/schedule.component';
 import { GalleryComponent } from './user/gallery/gallery.component';
-import { BlogComponent } from './user/blog/blog.component';
-import { BlogSingleComponent } from './user/blog-single/blog-single.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { ManageUsersComponent } from './admin/manage-users/manage-users.component';
@@ -28,6 +25,17 @@ import { UpdateTrainerComponent } from './admin/trainer/update-trainer/update-tr
 import { ManagePackageComponent } from './admin/package/manage-package/manage-package.component';
 import { AddPackageComponent } from './admin/package/add-package/add-package.component';
 import { UpdatePackageComponent } from './admin/package/update-package/update-package.component';
+import{ AngularFireModule} from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
+import { PackagesComponent } from './user/packages/packages.component';
+import { TrainerComponent } from './user/trainer/trainer.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularFirestoreModule} from '@angular/fire/compat/firestore';
+import { NgxSpinnerModule } from "ngx-spinner"
+
+
+
 
 @NgModule({
   declarations: [
@@ -40,10 +48,7 @@ import { UpdatePackageComponent } from './admin/package/update-package/update-pa
     HomeComponent,
     LoginComponent,
     ContactComponent,
-    ScheduleComponent,
     GalleryComponent,
-    BlogComponent,
-    BlogSingleComponent,
     AdminDashboardComponent,
     ManageUsersComponent,
     AdminHeaderComponent,
@@ -57,6 +62,10 @@ import { UpdatePackageComponent } from './admin/package/update-package/update-pa
     ManagePackageComponent,
     AddPackageComponent,
     UpdatePackageComponent,
+    PackagesComponent,
+    TrainerComponent,
+   
+
 
   ],
   imports: [
@@ -64,6 +73,11 @@ import { UpdatePackageComponent } from './admin/package/update-package/update-pa
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
+    AngularFirestoreModule,
+    NgxSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

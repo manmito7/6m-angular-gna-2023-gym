@@ -23,8 +23,8 @@
                 <form (ngSubmit)="submit()" #registerForm="ngForm">
                     <div class="form-group">
                         <label for="exampleInputName">Name</label>
-                        <input type="text" class="form-control" id="exampleInputName" [(ngModel)]="userData.name"
-                            required pattern="[A-Za-z]{3}" #txtname="ngModel">
+                        <input type="text" class="form-control" id="exampleInputName" placeholder="Name" 
+                        name="name" [(ngModel)]="userData.name" required pattern="[A-Za-z]{3}" #txtname="ngModel">
                         <span
                             *ngIf="txtname.errors && txtname.invalid && txtname.touched && txtname.errors['required'] && txtname.errors['pattern']">Invalid
                             Name</span>
@@ -32,28 +32,28 @@
 
                     <div class="form-group">
                         <label for="exampleInputAge">Age</label>
-                        <input type="number" class="form-control" id="exampleInputAge" [(ngModel)]="userData.age"
+                        <input type="number" class="form-control" id="exampleInputAge" placeholder="Age" name="age" [(ngModel)]="userData.age"
                             required>
                     </div>
 
                     <div class="form-group">
                         <label for="exampleInputContact">Contact</label>
-                        <input type="number" class="form-control" id="exampleInputContact"
+                        <input type="number" class="form-control" id="exampleInputContact"  placeholder="Contact" name="contact"
                             [(ngModel)]="userData.contact" required>
                     </div>
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            [(ngModel)]="userData.email" required>
+                        placeholder="Email" name="email"  [(ngModel)]="userData.email" required>
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                             else.</small>
                     </div>
 
                     <div class="form-group">
                         <label for="exampleInputPassword">Password</label>
-                        <input type="text" class="form-control" id="exampleInputPassword" [(ngModel)]="userData.name"
-                            required pattern="[A-Za-z]{3}" #txtname="ngModel">
+                        <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password" name="Password" [(ngModel)]="userData.password"
+                            required>
                     </div>
 
                     <button type="submit" routerLink="/login" class="btn btn-danger">Register</button>
@@ -65,9 +65,3 @@
         </div>
     </div>
 </section>
-
-
-
-
-
-
