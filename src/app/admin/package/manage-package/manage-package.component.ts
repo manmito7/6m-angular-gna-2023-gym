@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs';
 import { AddPackage } from 'src/app/models/add-package/add-package.model';
 import { PackageService } from 'src/app/shared/package/package.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-manage-package',
   templateUrl: './manage-package.component.html',
@@ -27,9 +27,27 @@ export class ManagePackageComponent implements OnInit{
 
     })
   }
-  // delete(id:any){
-  //   swal.fire
-
-  // }
+  delete(id:any){
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.Package.delete(id)
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+      }
+    })
+    
+    
+  }
 
 }

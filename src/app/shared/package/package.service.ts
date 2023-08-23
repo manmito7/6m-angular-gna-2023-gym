@@ -35,17 +35,19 @@ export class PackageService {
     return this.db.collection(this.dbPath)
   }
 
-  // delete(id:any){
-  //   this.spinner.show()
-  //   this.db.collection(this.dbPath).doc(id).delete()
-  //   .then((res)=>{
-  //     this.toastr.success("Document Delted","Success")
-  //     this.spinner.hide()
-  
-  //   })
-  
-  
-  // }
+  delete(id:any){
+    this.spinner.show()
+    this.db.collection(this.dbPath).doc(id).delete()
+    .then((res)=>{
+      this.toastr.success("Document Delted","Success")
+      this.spinner.hide()
+    })
+    .catch((err)=>{
+      this.toastr.error(err,"Try Again")
+      this.spinner.hide()
+
+    })
+  }
   
 }
 
