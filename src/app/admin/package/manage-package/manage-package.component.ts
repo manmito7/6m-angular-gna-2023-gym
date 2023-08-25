@@ -38,7 +38,7 @@ export class ManagePackageComponent implements OnInit{
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.Package.delete(id)
+        this.Package.update(id,{status:false})
         Swal.fire(
           'Deleted!',
           'Your file has been deleted.',

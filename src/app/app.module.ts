@@ -33,7 +33,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFirestoreModule} from '@angular/fire/compat/firestore';
 import { NgxSpinnerModule } from "ngx-spinner"
-
+import {AngularFireAuthModule} from '@angular/fire/compat/auth'
 
 
 
@@ -78,6 +78,7 @@ import { NgxSpinnerModule } from "ngx-spinner"
     BrowserAnimationsModule,
     AngularFirestoreModule,
     NgxSpinnerModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

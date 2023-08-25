@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/auth/auth.service';
+import { UserService } from 'src/app/shared/user/user.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,7 @@ import { AuthService } from 'src/app/shared/auth/auth.service';
 export class HeaderComponent implements OnInit{
 
   login:boolean=false;
-  constructor(private auth:AuthService, private router:Router){}
+  constructor(private auth:AuthService, private router:Router, private userService:UserService){}
   ngOnInit(): void {
     this.checkLogin()
   }
@@ -26,8 +27,7 @@ export class HeaderComponent implements OnInit{
   }
 
   logout(){
-    this.auth.remove()
-    this.router.navigateByUrl('/login')
+    this.userService.logout()
 
   }
 }

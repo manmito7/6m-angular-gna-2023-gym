@@ -23,11 +23,11 @@
 <div class="row">
     <div class="col-3"></div>
     <div class="col-6">
-        <form> 
-            <input type="text" class="form-control m-3" placeholder="Package Name">
-            <input type="numbers" class="form-control m-3" placeholder="duration">
-            <input type="text" class="form-control m-3" placeholder="Time Period">
-            <input type="numbers" class="form-control m-3" placeholder="Price">
+        <form (ngSubmit)="submit()"> 
+            <input type="text" class="form-control m-3" placeholder="Package Name" id="name" name="name" [(ngModel)]="package.Package_name">
+            <input type="numbers" class="form-control m-3" placeholder="duration" id="duration" name="duration" [(ngModel)]="package.duration">
+            <input type="text" class="form-control m-3" placeholder="Time Period" id="Time_period" name="Time_period" [(ngModel)]="package.time_period">
+            <input type="numbers" class="form-control m-3" placeholder="Price" id="Price" name="Price" [(ngModel)]="package.price" >
             <!-- <select name="Certifications" class="form-control m-3">
                 <option value="1">Diploma</option>
                 <option value="2"></option>
@@ -37,7 +37,7 @@
 
             </select> -->
 
-            <button routerLink="/admin/manage-package" type="submit" class="btn btn-danger m-3 p-2">Update</button>
+            <button type="submit" class="btn btn-danger m-3 p-2">Update</button>
             <div class="col-3"></div>
         </form>
     </div>

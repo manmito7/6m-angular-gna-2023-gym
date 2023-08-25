@@ -43,7 +43,7 @@ const routes: Routes = [
       {path:'manage-users',component:ManageUsersComponent},
       {path:'manage-package',component:ManagePackageComponent},
       {path:'add-package',component:AddPackageComponent},
-      {path:'update-package',component:UpdatePackageComponent},
+      {path:'update-package/:id',component:UpdatePackageComponent},
       {path:'manage-trainer',component:ManageTrainerComponent},
       {path:'add-trainer',component:AddTrainerComponent},
       {path:'update-trainer',component:UpdateTrainerComponent}
