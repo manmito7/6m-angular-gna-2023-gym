@@ -1,48 +1,33 @@
-import { Component } from '@angular/core';
-import {FormGroup, FormControl, Validators} from '@angular/forms';
-import {Router} from '@angular/router';
-import { AuthService } from '../shared/auth/auth.service';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
+import { UserauthService } from '../shared/userauth/userauth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
+  form = {
+    email: '',
+    password: ''
+  }
 
-    constructor(
-    private router:Router,
-    private auth:AuthService,
-    private toastr: ToastrService){}
+  constructor(private spinner: NgxSpinnerService, private toastr: ToastrService, private auth: UserauthService) { }
 
-    title:string= 'loginForm'
-    loginForm = new FormGroup({
-    email:new FormControl('',[Validators.required, Validators.email]),
-    password:new FormControl('', [Validators.required, Validators.minLength(4)]),
-  })
+  ngOnInit(): void {
 
-  submit(){
-    console.log("Form Submitted");
-    //console.log(this.loginForm);
-    console.log(this.loginForm.value);
-    //this.title='Logged in'
-    if(this.loginForm.value.email == "user@gmail.com" && this.loginForm.value.password == '1234'){
-      this.toastr.success("Welcome User", 'Login Successful')
-      this.router.navigateByUrl('/user/home')
-      this.auth.setData(this.loginForm.value.email)
-    }
+  }
 
-    else if(this.loginForm.value.email == "admin@gmail.com" && this.loginForm.value.password == '1234'){
-      this.toastr.success("Welcome Admin",'Login Successful')
-      this.router.navigateByUrl('/admin/dashboard')
-      this.auth.setData(this.loginForm.value.email)
+  submit() {
+    this.auth.SignIn(this.form)
+  }
 
-    }
-
-    else{
-      this.toastr.error("Invalid Credentials", 'Try Again')
-    }
+  googlesubmit() {
+    this.auth.GoogleAuth()
   }
 
 }

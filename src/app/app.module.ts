@@ -1,83 +1,110 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserComponent } from './user/user.component';
-import { LayoutComponent } from './user/layout/layout.component';
-import { HeaderComponent } from './user/layout/header/header.component';
-import { FooterComponent } from './user/layout/footer/footer.component';
-import { AboutUsComponent } from './user/about-us/about-us.component';
-import { HomeComponent } from './user/home/home.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ServicesComponent } from './services/services.component';
+import { ContactComponent } from './contact/contact.component';
+import { RegisterComponent } from './register/register.component';
+import { LayoutComponent } from './layout/layout.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
 import { LoginComponent } from './login/login.component';
-import { ContactComponent } from './user/contact/contact.component';
-import { GalleryComponent } from './user/gallery/gallery.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
-import { ManageUsersComponent } from './admin/manage-users/manage-users.component';
-import { AdminHeaderComponent } from './admin/admin-layout/admin-header/admin-header.component';
-import { AdminFooterComponent } from './admin/admin-layout/admin-footer/admin-footer.component';
-import { AdminLayoutComponent } from './admin/admin-layout/admin-layout.component';
-import { RegisterComponent } from './user/register/register.component';
-import { ProfileComponent } from './user/profile/profile.component';
-import { ManageTrainerComponent } from './admin/trainer/manage-trainer/manage-trainer.component';
-import { AddTrainerComponent } from './admin/trainer/add-trainer/add-trainer.component';
-import { UpdateTrainerComponent } from './admin/trainer/update-trainer/update-trainer.component';
-import { ManagePackageComponent } from './admin/package/manage-package/manage-package.component';
-import { AddPackageComponent } from './admin/package/add-package/add-package.component';
-import { UpdatePackageComponent } from './admin/package/update-package/update-package.component';
-import{ AngularFireModule} from '@angular/fire/compat';
-import { environment } from 'src/environments/environment';
-import { PackagesComponent } from './user/packages/packages.component';
-import { TrainerComponent } from './user/trainer/trainer.component';
-import { ToastrModule } from 'ngx-toastr';
+import { ProductsComponent } from './products/products.component';
+import { AdminComponent } from './admin/admin.component';
+import { UserComponent } from './user/user.component';
+import { CustomerComponent } from './customer/customer.component';
+import { PaymentComponent } from './payment/payment.component';
+import { PrivacyComponent } from './privacy/privacy.component';
+import { UserpanelComponent } from './userpanel/userpanel.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { UpdateComponent } from './update/update.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AngularFirestoreModule} from '@angular/fire/compat/firestore';
-import { NgxSpinnerModule } from "ngx-spinner"
 
-
+import { ToastrModule } from 'ngx-toastr';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { environment } from '../environments/environment';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AddserviceComponent } from './service/addservice/addservice.component';
+import { ManageserviceComponent } from './service/manageservice/manageservice.component';
+import { UpdateserviceComponent } from './service/updateservice/updateservice.component';
+import { AddpackageComponent } from './package/addpackage/addpackage.component';
+import { ManagepackageComponent } from './package/managepackage/managepackage.component';
+import { UpdatepackageComponent } from './package/updatepackage/updatepackage.component';
+import { AddcategoryComponent } from './category/addcategory/addcategory.component';
+import { ManagecategoryComponent } from './category/managecategory/managecategory.component';
+import { UpdatecategoryComponent } from './category/updatecategory/updatecategory.component';
+import { AddproductComponent } from './product/addproduct/addproduct.component';
+import { UpdateproductComponent } from './product/updateproduct/updateproduct.component';
+import { ManageproductComponent } from './product/manageproduct/manageproduct.component';
+import { AddbookingComponent } from './booking/addbooking/addbooking.component';
+import { ViewbookingComponent } from './booking/viewbooking/viewbooking.component';
+import { BookingstatusComponent } from './booking/bookingstatus/bookingstatus.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { PackagesComponent } from './packages/packages.component';
+import { ViewuserComponent } from './viewuser/viewuser.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent,
+    HomeComponent,
+    AboutComponent,
+    ServicesComponent,
+    ContactComponent,
+    RegisterComponent,
     LayoutComponent,
     HeaderComponent,
     FooterComponent,
-    AboutUsComponent,
-    HomeComponent,
     LoginComponent,
-    ContactComponent,
-    GalleryComponent,
-    AdminDashboardComponent,
-    ManageUsersComponent,
-    AdminHeaderComponent,
-    AdminFooterComponent,
-    AdminLayoutComponent,
-    RegisterComponent,
-    ProfileComponent,
-    ManageTrainerComponent,
-    AddTrainerComponent,
-    UpdateTrainerComponent,
-    ManagePackageComponent,
-    AddPackageComponent,
-    UpdatePackageComponent,
+    ProductsComponent,
+    AdminComponent,
+    UserComponent,
+    CustomerComponent,
+    PaymentComponent,
+    PrivacyComponent,
+    UserpanelComponent,
+    PagenotfoundComponent,
+    UpdateComponent,
+    DashboardComponent,
+    AddserviceComponent,
+    ManageserviceComponent,
+    UpdateserviceComponent,
+    AddpackageComponent,
+    ManagepackageComponent,
+    UpdatepackageComponent,
+    AddcategoryComponent,
+    ManagecategoryComponent,
+    UpdatecategoryComponent,
+    AddproductComponent,
+    UpdateproductComponent,
+    ManageproductComponent,
+    AddbookingComponent,
+    ViewbookingComponent,
+    BookingstatusComponent,
+    CategoriesComponent,
     PackagesComponent,
-    TrainerComponent,
-   
-
-
+    ViewuserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
-    FormsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(),
-    BrowserAnimationsModule,
-    AngularFirestoreModule,
     NgxSpinnerModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

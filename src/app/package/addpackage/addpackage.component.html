@@ -1,0 +1,53 @@
+<!-- Page Header Start-->
+<div class="container-fluid page-header py-5" style="margin-bottom: 0rem;">
+    <div class="container py-5">
+        <h1 class="display-3 text-white text-center mb-3 animated slideInDown">Add Package</h1>
+    </div>
+</div>
+<!-- Page Header End -->
+
+<div class="container-fluid overflow-hidden py-5 px-lg-0">
+    <div class="container about py-5 px-lg-0">
+        <div class="row g-5 mx-lg-0">
+            <div class="col-lg-6 mx-auto ps-lg-0 wow fadeInUp" data-wow-delay="0.1s">
+                <form class="bg-white px-5 pt-1 pb-5 rounded-3">
+                    <div class="mb-3 mt-2">
+                        <label for="exampleFormControlInput1" class="form-label text-black h6">Service </label>
+                        <select name="serviceName" #serviceName [(ngModel)]="form.serviceName" class="form-control rounded-pill" id="exampleFormControlInput1" required>
+                            <option value="" selected disabled>Select Package</option>
+                            <option *ngFor="let cat of servicedata">{{cat.serviceName}}</option>
+                        </select>
+                    </div>
+                    <div class="mb-3 mt-2">
+                        <label for="exampleFormControlInput1" class="form-label text-black h6">Package </label>
+                        <input type="text" class="form-control rounded-pill" id="exampleFormControlInput1"
+                            placeholder="Enter Package Name" name="packageName" #packageName [(ngModel)]="form.packageName" required>
+                    </div>
+                    <div class="mb-3 mt-2">
+                        <label for="exampleFormControlInput1" class="form-label text-black h6">Cost</label>
+                        <input type="number" class="form-control rounded-pill" id="exampleFormControlInput1"
+                            placeholder="Enter Price" name="price" #price [(ngModel)]="form.price"required>
+                    </div>
+                    <div class="mb-3 mt-2">
+                        <label for="exampleFormControlInput1" class="form-label text-black h6">Description</label>
+                        <input type="text" class="form-control rounded-pill" id="exampleFormControlInput1"
+                            placeholder="Enter About Package " name="description" #description [(ngModel)]="form.description" required>
+                    </div>
+                    <div class="mb-3 mt-2">
+                        <label for="exampleFormControlInput1" class="form-label text-black h6">Image</label>
+                        <input type="file" class="form-control rounded-pill" id="exampleFormControlInput1"
+                            placeholder="Upload Image" (change)="selectFile($event)" name="image" #image
+                            [(ngModel)]="form.image" required>
+                    </div>
+                    <hr>
+                    <div class="d-grid gap-2 col-5 mb-2 mt-3 mx-auto">
+                        <button class="btn btn-primary fw-bolder rounded-3" (click)="submit()"
+                            [disabled]="!form.serviceName || !form.packageName || !form.description || !form.price ||  !selectedFiles">Add</button>
+
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

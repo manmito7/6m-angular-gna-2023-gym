@@ -1,0 +1,40 @@
+<!-- Page Header Start-->
+<div class="container-fluid page-header py-5" style="margin-bottom: 0rem;">
+    <div class="container py-5">
+      <h1 class="display-3 text-white text-center mb-3 animated slideInDown">User</h1>
+    </div>
+  </div>
+  <!-- Page Header End -->
+  
+  <div class="container-fluid overflow-hidden py-5 px-lg-0">
+    <div class="container about py-5 px-lg-0">
+      <div class="row g-5 mx-lg-0">
+        <div class="col-lg-10 mx-auto ps-lg-0 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="row d-flex">
+                <div class="col-md-12 mx-auto table-responsive justify-content-center">
+                    <table class="table table-light table-bordered table-striped text-black ">
+                        <thead class="table-dark text-white">
+                            <tr>
+                                <th>Sr.no.</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Contact</th>
+                                <th>Address</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of packageData; let i = index">
+                                <td>{{ i + 1 }}</td>
+                                <td>{{ data.first_name }} {{ data.last_name }}</td>
+                                <td>{{ data.email }}</td>
+                                <td>{{ data.contact }}</td>
+                                <td>{{ data.address }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,40 @@
+<!-- Page Header Start-->
+<div class="container-fluid page-header py-5" style="margin-bottom: 0rem;">
+    <div class="container py-5">
+      <h1 class="display-3 text-white text-center mb-3 animated slideInDown">Update Service</h1>
+    </div>
+  </div>
+  <!-- Page Header End -->
+  
+  <div class="container-fluid overflow-hidden py-5 px-lg-0">
+    <div class="container about py-5 px-lg-0">
+      <div class="row g-5 mx-lg-0">
+        <div class="col-lg-6 mx-auto ps-lg-0 wow fadeInUp" data-wow-delay="0.1s">
+          <form class="bg-white px-5 pt-1 pb-5 rounded-3">
+            <div class="row mt-5 fw-bolder">
+  
+              <div class="col-6">
+                <label for="exampleFormControlInput1" class="form-label text-black h6">Service</label>
+                <input type="text" class="form-control rounded-pill" id="exampleFormControlInput1"
+                  placeholder=" Enter Service Name" name="serviceName" #serviceName [(ngModel)]="currentService.serviceName" required>
+              </div>
+  
+              <div class="col-6">
+                <label for="exampleFormControlInput1" class="form-label text-black h6">Image</label>
+                <input type="file" class="form-control rounded-pill" id="exampleFormControlInput1"
+                  placeholder="Upload Image" (change)="selectFile($event)" name="fileName" #fileName [(ngModel)]="currentService.fileName" required>
+              </div>
+  
+            </div>
+           
+            <hr>
+            <div class="d-grid gap-2 col-5 mb-2 mt-3 mx-auto">
+              <button class="btn btn-primary fw-bolder rounded-3" (click)="submit()" [disabled]="!currentService.serviceName">Update</button>
+  
+            </div>
+          </form>
+  
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,66 @@
+<!-- Page Header Start-->
+<div class="container-fluid page-header py-5" style="margin-bottom: 0rem;">
+  <div class="container py-5">
+    <h1 class="display-3 text-white text-center mb-3 animated slideInDown">Register</h1>
+  </div>
+</div>
+<!-- Page Header End -->
+
+<div class="container-fluid overflow-hidden py-5 px-lg-0">
+  <div class="container about py-5 px-lg-0">
+    <div class="row g-5 mx-lg-0">
+      <div class="col-lg-6 mx-auto ps-lg-0 wow fadeInUp" data-wow-delay="0.1s">
+        <form class="bg-white px-5 pt-1 pb-5 rounded-3">
+          <div class="row mt-5 fw-bolder">
+
+            <div class="col-6">
+              <label for="exampleFormControlInput1" class="form-label text-black h6">First Name</label>
+              <input type="text" class="form-control rounded-pill" id="exampleFormControlInput1"
+                placeholder=" Enter Your First Name" name="first_name" #first_name [(ngModel)]="form.first_name">
+            </div>
+
+            <div class="col-6">
+              <label for="exampleFormControlInput1" class="form-label text-black h6">Last Name</label>
+              <input type="text" class="form-control rounded-pill" id="exampleFormControlInput1"
+                placeholder="Enter Your Last Name" name="last_name" #last_name [(ngModel)]="form.last_name">
+            </div>
+
+          </div>
+          <div class="mb-3 mt-2">
+            <label for="exampleFormControlInput1" class="form-label text-black h6">Email</label>
+            <input type="email" class="form-control rounded-pill" id="exampleFormControlInput1"
+              placeholder="name@example.com" name="email" #email [(ngModel)]="form.email">
+          </div>
+
+
+          <div class="mb-3 mt-2">
+            <label for="exampleFormControlInput1" class="form-label text-black h6">Contact</label>
+            <input type="number" class="form-control rounded-pill" id="exampleFormControlInput1"
+              placeholder="Enter Your Contact" name="contact" #contact [(ngModel)]="form.contact">
+          </div>
+          <div class="mb-3 mt-3" style="border-top-left-radius: 700px;">
+            <label for="exampleFormControlInput1" class="form-label text-black h6">Password</label>
+            <input type="password" class="form-control rounded-pill" id="exampleFormControlInput1"
+              placeholder=" Enter Password" name="password" #password [(ngModel)]="form.password">
+          </div>
+
+          <div class="mb-3 mt-3" style="border-top-left-radius: 700px;">
+            <label for="exampleFormControlInput1" class="form-label text-black h6">Address</label>
+            <input type="text" class="form-control rounded-pill" id="exampleFormControlInput1"
+              placeholder="Enter Your Address" name="address" #address [(ngModel)]="form.address">
+          </div>
+          <hr>
+          <div class="d-grid gap-2 col-5 mx-auto">
+            <button class="btn btn-primary fw-bolder rounded-3" (click)="submit()">Register</button>
+
+          </div>
+
+          <div class="text-center">
+            <p>Already a member? <a routerLink="/layout/login">Login</a></p>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,166 @@
+<!--<div class="container-fluid pt-3 bg-warning">
+
+
+</div>
+
+<div class="container-fluid shadow py-5 py-lg-5">
+  <div class="container">
+
+      <div class="row ">
+
+          <div class="col-md-2 start-100 mx-auto">
+              <p class="h1 text-start py-1">GHN</p>
+          </div>
+          <div class="col-md-6"></div>
+          <div class="col-md-4">
+              <div class="row">
+                  <div class="col-md">
+                      <p class="h4 pt-4">HOME</p>
+                  </div>
+                  <div class="col-md text-secondary">
+                      <p class="h4 pt-4">About</p>
+                  </div>
+                  <div class="col-md text-secondary">
+                      <p class="h4 pt-4">Contact</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+  </div>
+</div>-->
+<!----
+<nav class="navbar navbar-light bg-dark">
+  <div class="container-fluid col-11">
+      <a routerLink="layout/home" class="navbar-brand bg-dark d-flex align-items-center px-3 px-lg-5">
+        <h2 class="mb-2 text-white">
+          <img src="/assets/img/favicon.png" class=" bg-dark my-5">GymHavenAndNutrition</h2>
+    </a>
+    <form class="d-flex">
+      <input class="form-control me-2 rounded-pill" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-light bg-danger text-white rounded-pill" type="submit">Search</button>
+    </form>
+  </div>
+</nav>-->
+<!-- Header Section Begin --
+   <header class="header-section header-normal">
+    <div class="container-fluid">
+        <div class="logo">
+            <a href="/layout/home">
+                <img src="/src/assets/img/logo.png" alt="">
+            </a>
+        </div>
+        <div class="top-social">
+            <a href="#"><i class="fa fa-pinterest-p"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-pinterest-p"></i></a>
+            <a href="#"><i class="fa fa-youtube-play"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+        </div>
+        <div class="container">
+            <div class="nav-menu">
+                <nav class="mainmenu mobile-menu">
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./about-us.html">About us</a></li>
+                        <li class="active"><a href="./schedule.html">Schedule</a></li>
+                        <li><a href="./gallery.html">Gallery</a></li>
+                        <li><a href="./blog.html">Blog</a>
+                            <ul class="dropdown">
+                                <li><a href="./about-us.html">About Us</a></li>
+                                <li><a href="./blog-single.html">Blog Details</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="./contact.html">Contacts</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+    </div>
+</header>
+-- Header End -->
+
+<!----
+<nav class="navbar navbar-expand bg-white navbar-light shadow border-top sticky-top">
+
+  <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+      <div class="navbar-nav mx-auto p-4 p-lg-0 ">
+          <a routerLink="/layout/home" class="nav-item nav-link active">Home</a>
+          <a href="/layout/about" class="nav-item nav-link">About</a>
+          <a href="/layout/contact" class="nav-item nav-link">Contact</a>
+          <div class="nav-item dropdown">
+              <a routerLink="/layoutpages/pages" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+              <div class="dropdown-menu fade-up m-0">
+                  <a href="price.html" class="dropdown-item">Pricing Plan</a>
+                  <a href="feature.html" class="dropdown-item">Features</a>
+                  <a href="quote.html" class="dropdown-item">Free Quote</a>
+                  <a href="team.html" class="dropdown-item">Our Team</a>
+                  <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                  <a href="404.html" class="dropdown-item">404 Page</a>
+              </div>
+          </div>
+          <a href="/layout/register" class="nav-item nav-link">Register</a>
+      </div>
+
+     <h4 class="m-0 pe-lg-5 d-none d-lg-block"><i class="fa fa-dumbbell text-primary me-3"></i>+012 345 6789</h4>
+</nav>-->
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+<nav
+    class="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary sticky-top p-0 mt-0">
+    <a href="index.html" class="navbar-brand bg-primary d-flex align-items-center px-4 px-lg-5">
+        <h2 class="mb-2 text-white">GYMHAVEN</h2>
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <a *ngIf="((userdata?.userType == 'Admin') && (isloggedIn))" href="/layout/dashboard" class="nav-item nav-link">Home</a>
+            <div class="nav-item dropdown" *ngIf="((userdata?.userType == 'Admin') && (isloggedIn))">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Service</a>
+                <div class="dropdown-menu fade-up m-0">
+                    <a routerLink="/layout/addservice" class="dropdown-item">Add</a>
+                    <a routerLink="/layout/manageservice" class="dropdown-item">Manage</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown" *ngIf="((userdata?.userType == 'Admin') && (isloggedIn))">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Package</a>
+                <div class="dropdown-menu fade-up m-0">
+                    <a routerLink="/layout/addPackage" class="dropdown-item">Add</a>
+                    <a routerLink="/layout/managePackage" class="dropdown-item">Manage</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown" *ngIf="((userdata?.userType == 'Admin') && (isloggedIn))">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Category</a>
+                <div class="dropdown-menu fade-up m-0">
+                    <a routerLink="/layout/addcategory" class="dropdown-item">Add</a>
+                    <a routerLink="/layout/managecategory" class="dropdown-item">Manage</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown" *ngIf="((userdata?.userType == 'Admin') && (isloggedIn))">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Product</a>
+                <div class="dropdown-menu fade-up m-0">
+                    <a routerLink="/layout/addproduct" class="dropdown-item">Add</a>
+                    <a routerLink="/layout/manageproduct" class="dropdown-item">Manage</a>
+                </div>
+            </div>
+            <a *ngIf="((userdata?.userType == 'Admin') && (isloggedIn))" routerLink="/layout/viewbooking" class="nav-item nav-link">Booking</a>
+            <a *ngIf="((userdata?.userType == 'Admin') && (isloggedIn))" routerLink="/layout/viewuser" class="nav-item nav-link">User</a>
+
+
+            <a *ngIf="((userdata?.userType != 'Admin') && (!isloggedIn)) || ((userdata?.userType != 'Admin') && (isloggedIn))" routerLink="/layout/home" class="nav-item nav-link">Home</a>
+          <a *ngIf="((userdata?.userType != 'Admin') && (!isloggedIn)) || ((userdata?.userType != 'Admin') && (isloggedIn))" routerLink="/layout/about" class="nav-item nav-link">About</a>
+          <a *ngIf="((userdata?.userType != 'Admin') && (!isloggedIn)) || ((userdata?.userType != 'Admin') && (isloggedIn))" routerLink="/layout/services" class="nav-item nav-link">Package</a>
+          <a *ngIf="((userdata?.userType != 'Admin') && (!isloggedIn)) || ((userdata?.userType != 'Admin') && (isloggedIn))" routerLink="/layout/categories" class="nav-item nav-link">Product</a>
+          <a *ngIf="((userdata?.userType == 'Customer') && (isloggedIn))" routerLink="/layout/bookingstatus" class="nav-item nav-link">Booking Status</a>
+    
+          <a *ngIf="isloggedIn" class=" btn nav-item nav-link" (click)="logout()">Logout</a>
+            <a *ngIf="!isloggedIn" routerLink="/layout/login" class="nav-item nav-link">Login</a>
+        </div>
+        <h4 class="m-0 pe-lg-5 d-none d-lg-block"><i class="fa fa-dumbbell text-primary me-3"></i>+012 345 6789</h4>
+    </div>
+</nav>

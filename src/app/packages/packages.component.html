@@ -1,0 +1,41 @@
+
+<!-- Page Header Start-->
+<div class="container-fluid page-header py-5" style="margin-bottom: 0rem;">
+    <div class="container py-5">
+        <h1 class="display-3 text-white mb-3 text-center animated slideInDown">Packages</h1>
+    </div>
+  </div>
+  <!-- Page Header End -->
+  <section style="background-color: #000000;">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-12 col-lg-4 mb-4 mb-lg-0" *ngFor="let data of packages">
+          <a [routerLink]="['/layout/products',data.serviceName]" class="stretched-link mt-5 mt-b"></a>
+          <div class="card">
+            <img src="{{data.image}}"
+                class="card-img-top" alt="Laptop" style="height: 250px;width: 356px;"  />
+            <div class="card-body">
+              
+            <div class="d-flex justify-content-center p-3">
+              <p class="lead mb-0 ">{{data.packageName}}</p>
+  
+            </div>
+            <div class="d-flex justify-content-center p-3">
+              <p class="lead mb-0">{{data.price | currency:'INR'}}</p>
+  
+            </div>
+              <div class="d-flex justify-content-center">
+                <p class="text-danger text-center">{{data.description}}</p>
+              </div>
+              <div class="d-flex justify-content-center">
+                <a [routerLink]="['/layout/addbooking',data.serviceName,data.packageName]" class="btn btn-outline-danger" *ngIf="((userdata?.userType == 'Customer') && (isloggedIn))">Book Now</a>
+                <a [routerLink]="['/layout/login']" class="btn btn-outline-danger" *ngIf="!isloggedIn">Login to Book</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  

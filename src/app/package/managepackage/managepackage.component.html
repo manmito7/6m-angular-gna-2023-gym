@@ -1,0 +1,63 @@
+<!-- Page Header Start-->
+<div class="container-fluid page-header py-5" style="margin-bottom: 0rem;">
+    <div class="container py-5">
+      <h1 class="display-3 text-white text-center mb-3 animated slideInDown">Manage Package</h1>
+    </div>
+  </div>
+  <!-- Page Header End -->
+  
+  <div class="container-fluid overflow-hidden py-5 px-lg-0">
+    <div class="container about py-5 px-lg-0">
+      <div class="row g-5 mx-lg-0">
+        <div class="col-lg-10 mx-auto ps-lg-0 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="row d-flex">
+                <div class="col-md-12 mx-auto table-responsive justify-content-center">
+                    <table class="table table-light table-bordered table-striped text-black ">
+                        <thead class="table-dark text-white">
+                            <tr>
+                                <th>Sr.no.</th>
+                                <th>Service</th>
+                                <th>Package</th>
+                                <th>Thumbnail</th>
+                                <th>Cost</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of packageData; let i = index">
+                                <td>{{ i + 1 }}</td>
+                                <td>{{ data.serviceName }}</td>
+                                <td>{{ data.packageName }}</td>
+                                <td align="center">
+                                    <img src="{{data.image}}" alt="" class="img-thumbnail"
+                                        style="height: 200px; width: 200px;" />
+                                    </td>
+                                <td>{{ data.price | currency:'INR'}}</td>
+
+                                <td>{{ data.description }}</td>
+
+
+                                <td>
+                                    <span
+                                        [ngClass]="{'status-enable': data.status === 'enable', 'status-disable': data.status === 'disable'}">{{
+                                        data.status }}</span>
+                                </td>
+                                <td class="a1" align="center">
+                                    <a class=" " style="color: blue;"
+                                        [routerLink]="['/layout/updatePackage', data.id]">
+                                        <i class="bi bi-pencil-square  fa-2x"></i>
+                                    </a> &nbsp;
+                                    <a class=" btn1  bi bi-check " style="color:green" *ngIf="data.status == 'Disable'" (click)="EnableDisable(data.id,'Enable')"></a> &nbsp;
+                                    <a class=" btn1  bi bi-x  " style="color: red;" *ngIf="data.status == 'Enable'" (click)="EnableDisable(data.id,'Disable')"></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "demo": {
+    "Project": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/demo",
+            "outputPath": "dist/project",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -26,29 +26,24 @@
             ],
             "styles": [
               "src/styles.css",
-              "src/assets/css/bootstrap.min.css",
-              "src/assets/css/font-awesome.min.css",
-              "src/assets/css/elegant-icons.css",
-              "src/assets/css/nice-select.css",
-              "src/assets/css/owl.carousel.min.css",
-              "src/assets/css/magnific-popup.css",
-              "src/assets/css/slicknav.min.css",
+              "src/assets/lib/animate/animate.min.css",
+              "src/assets/lib/owlcarousel/assets/owl.carousel.min.css",
               "src/assets/css/style.css",
+              "src/assets/css/hell.css",
+              "src/assets/css/admin.css",
+              "src/assets/css/admin.rtl.css",
+              "src/assets/css/customer.css",
               "node_modules/ngx-toastr/toastr.css",
-              "node_modules/ngx-spinner/animations/ball-scale-multiple.css" 
-              
+              "node_modules/ngx-spinner/animations/ball-scale-multiple.css"
             ],
             "scripts": [
-              "src/assets/js/jquery-3.3.1.min.js",
-              "src/assets/js/bootstrap.min.js",
-              "src/assets/js/jquery.magnific-popup.min.js",
-              "src/assets/js/mixitup.min.js",
-              "src/assets/js/jquery.nice-select.min.js",
-              "src/assets/js/jquery.slicknav.js",
-              "src/assets/js/owl.carousel.min.js",
-              "src/assets/js/masonry.pkgd.min.js",
-              "src/assets/js/main.js"
-
+              "src/assets/lib/wow/wow.min.js",
+              "src/assets/lib/easing/easing.min.js",
+              "src/assets/lib/waypoints/waypoints.min.js",
+              "src/assets/lib/counterup/counterup.min.js",
+              "src/assets/lib/owlcarousel/owl.carousel.min.js",
+              "src/assets/js/main.js",
+              "src/assets/js/admin.js"
             ]
           },
           "configurations": {
@@ -82,10 +77,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "demo:build:production"
+              "browserTarget": "Project:build:production"
             },
             "development": {
-              "browserTarget": "demo:build:development"
+              "browserTarget": "Project:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -93,7 +88,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "demo:build"
+            "browserTarget": "Project:build"
           }
         },
         "test": {
@@ -116,5 +111,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "68e50dac-7068-4537-a80d-6e261692ce2b"
   }
 }

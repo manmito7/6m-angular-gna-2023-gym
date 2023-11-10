@@ -1,0 +1,30 @@
+
+<!-- Page Header Start-->
+<div class="container-fluid page-header py-5" style="margin-bottom: 0rem;">
+    <div class="container py-5">
+        <h1 class="display-3 text-white text-center mb-3 animated slideInDown">Products</h1>
+    </div>
+  </div>
+  <!-- Page Header End -->
+  <section style="background-color: #000000;">
+    <div class="container py-5">
+        <h1 class="text-light text-center mt-5 mb-5">Choose Category</h1>
+      <div class="row">
+        <div class="col-md-12 col-lg-4 mb-4 mb-lg-0" *ngFor="let data of categories">
+            <a [routerLink]="['/layout/products',data.categoryName]" class="stretched-link mt-5 mt-b">
+          <div class="card">
+            <img src="{{data.fileName}}"
+              class="card-img-top" alt="Laptop" style="height: 250px;width: 356px;"  />
+            <div class="card-body">
+              <div class="d-flex justify-content-center mt-3">
+                <h5>{{data.categoryName}}</h5>
+              </div>
+            </div>
+          </div>
+        </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  

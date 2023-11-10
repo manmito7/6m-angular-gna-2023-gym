@@ -1,0 +1,55 @@
+<!-- Page Header Start-->
+<div class="container-fluid page-header py-5" style="margin-bottom: 0rem;">
+    <div class="container py-5">
+      <h1 class="display-3 text-white text-center mb-3 animated slideInDown">Bookiing</h1>
+    </div>
+  </div>
+  <!-- Page Header End -->
+  
+  <div class="container-fluid overflow-hidden py-5 px-lg-0">
+    <div class="container about py-5 px-lg-0">
+      <div class="row g-5 mx-lg-0">
+        <div class="col-lg-6 mx-auto ps-lg-0 wow fadeInUp" data-wow-delay="0.1s">
+          <form class="bg-white px-5 pt-1 pb-5 rounded-3">
+
+            <div class="mb-3 mt-2">
+              <label for="exampleFormControlInput1" class="form-label text-black h6">Name</label>
+              <input type="text" class="form-control rounded-pill" id="exampleFormControlInput1"
+                placeholder="name@example.com" name="customerName" #customerName [(ngModel)]="form.customerName" readonly>
+            </div>
+  
+  
+            <div class="mb-3 mt-2">
+              <label for="exampleFormControlInput1" class="form-label text-black h6">Service</label>
+              <input type="text" class="form-control rounded-pill" id="exampleFormControlInput1"
+                placeholder="Enter Your Contact"  name="serviceName" #serviceName [(ngModel)]="form.serviceName" readonly>
+            </div>
+            <div class="mb-3 mt-3" style="border-top-left-radius: 700px;">
+              <label for="exampleFormControlInput1" class="form-label text-black h6">Package</label>
+              <input type="text" class="form-control rounded-pill" id="exampleFormControlInput1"
+                placeholder=" Enter Password"  name="packageName" #packageName [(ngModel)]="form.packageName">
+            </div>
+  
+            <div class="mb-3 mt-3" style="border-top-left-radius: 700px;">
+              <label for="exampleFormControlInput1" class="form-label text-black h6">Price</label>
+              <input type="number" class="form-control rounded-pill" id="exampleFormControlInput1"
+                placeholder="Price" name="price"  #price [(ngModel)]="form.price"   readonly>
+            </div>
+            <div class="mb-3 mt-3" style="border-top-left-radius: 700px;">
+              <label for="exampleFormControlInput1" class="form-label text-black h6">Booking Date</label>
+              <input  class="form-control rounded-pill" id="exampleFormControlInput1"
+              placeholder="Enter Date" type="date" name="bookingDate"
+              #bookingDate [(ngModel)]="form.bookingDate">
+            </div>
+            <hr>
+            <div class="d-grid gap-2 col-5 mx-auto">
+              <button class="btn btn-primary fw-bolder rounded-3" [disabled]="!form.packageName || !form.serviceName || !form.price " (click)="submit()">Book</button>
+  
+            </div>
+  
+          </form>
+  
+        </div>
+      </div>
+    </div>
+  </div>
